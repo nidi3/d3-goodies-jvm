@@ -44,7 +44,6 @@ class Color private constructor(private val c: Peer) {
     private fun <T> inv(name: String, vararg args: Any) = invocable.invokeMethod(c, name, *args) as T
     private fun invPeer(name: String, vararg args: Any): Peer = inv(name, *args)
 
-
     companion object {
         @JvmOverloads
         @JvmStatic
@@ -99,25 +98,5 @@ class Color private constructor(private val c: Peer) {
 
         @JvmStatic
         fun cubehelix(color: Color) = Color(invokeAsPeer("cubehelix", color.c))
-
-//        private fun hex(i: Int) = i.and(0xff).toString(16).let { if (it.length == 1) "0$it" else it }
     }
 }
-
-//data class Color(private val rgb: Int) {
-//    fun rgbInt() = rgb
-//    fun rgbString() = hex(rgb.shr(16)) + hex(rgb.shr(8)) + hex(rgb)
-//
-//    companion object {
-//        private val D3_PATTERN = Regex("""rgb\((\d+), (\d+), (\d+)\)""")
-//
-//        fun ofD3(rgb: String) = D3_PATTERN.matchEntire(rgb)
-//                ?.let {
-//                    Color(0x10000 * it.groupValues[1].toInt() + 0x100 * it.groupValues[2].toInt() + it.groupValues[3].toInt())
-//                }
-//                ?: throw IllegalArgumentException("Unexpected input $rgb")
-//
-//        private fun hex(i: Int) = i.and(0xff).toString(16).let { if (it.length == 1) "0$it" else it }
-//    }
-//}
-//

@@ -162,5 +162,4 @@ object ScaleChromatic {
 
         private fun color(name: String, value: Double) = Color(invoke(name, value) as String)
     }
-
 }
