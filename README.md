@@ -1,2 +1,2 @@
-# 3d-goodies-jvm
-Some nice 3d.js functions made usable for the JVM
+# d3-goodies-jvm
+Some nice d3.js functions made usable for the JVM

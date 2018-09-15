@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>guru.nidi</groupId>
+        <artifactId>guru-nidi-parent-pom</artifactId>
+        <version>1.1.21</version>
+        <relativePath />
+    </parent>
+
+    <artifactId>d3-goodies-jvm</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+
+    <name>${project.artifactId}</name>
+    <description>Use goodies from d3.js on the JVM.</description>
+    <url>https://github.com/nidi3/d3-goodies-jvm</url>
+    <inceptionYear>2018</inceptionYear>
+
+    <scm>
+        <connection>scm:git:https://github.com/nidi3/d3-goodies-jvm</connection>
+        <developerConnection>scm:git:https://github.com/nidi3/d3-goodies-jvm</developerConnection>
+        <url>https://github.com/nidi3/d3-goodies-jvm</url>
+        <tag>HEAD</tag>
+    </scm>
+
+    <properties>
+        <kotlin.version>1.2.70</kotlin.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.jetbrains.kotlin</groupId>
+            <artifactId>kotlin-stdlib-jdk8</artifactId>
+        </dependency>
+    </dependencies>
+</project>
