@@ -10,7 +10,7 @@
     </parent>
 
     <artifactId>d3-goodies-jvm</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
 
     <name>${project.artifactId}</name>
     <description>Use goodies from d3.js on the JVM.</description>
@@ -21,7 +21,7 @@
         <connection>scm:git:https://github.com/nidi3/d3-goodies-jvm</connection>
         <developerConnection>scm:git:https://github.com/nidi3/d3-goodies-jvm</developerConnection>
         <url>https://github.com/nidi3/d3-goodies-jvm</url>
-        <tag>HEAD</tag>
+        <tag>d3-goodies-jvm-0.0.1</tag>
     </scm>
 
     <properties>
