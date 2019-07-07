@@ -15,16 +15,13 @@
  */
 package guru.nidi.d3
 
-import guru.nidi.codeassert.checkstyle.CheckstyleAnalyzer
-import guru.nidi.codeassert.checkstyle.StyleEventCollector
+import guru.nidi.codeassert.checkstyle.*
 import guru.nidi.codeassert.config.AnalyzerConfig
 import guru.nidi.codeassert.config.In
 import guru.nidi.codeassert.config.Language.KOTLIN
 import guru.nidi.codeassert.dependency.*
-import guru.nidi.codeassert.findbugs.BugCollector
-import guru.nidi.codeassert.findbugs.FindBugsAnalyzer
+import guru.nidi.codeassert.findbugs.*
 import guru.nidi.codeassert.junit.CodeAssertJunit5Test
-import guru.nidi.codeassert.junit.PredefConfig
 import guru.nidi.codeassert.junit.kotlin.KotlinCodeAssertMatchers.hasNoKtlintIssues
 import guru.nidi.codeassert.ktlint.KtlintAnalyzer
 import guru.nidi.codeassert.ktlint.KtlintCollector
@@ -47,19 +44,19 @@ class CodeAnalysisTest : CodeAssertJunit5Test() {
                 .analyze()
     }
 
-    override fun analyzeCheckstyle() = CheckstyleAnalyzer(config, PredefConfig.adjustedGoogleStyleChecks(), StyleEventCollector()
-            .apply(PredefConfig.minimalCheckstyleIgnore()))
+    override fun analyzeCheckstyle() = CheckstyleAnalyzer(config, CheckstyleConfigs.adjustedGoogleStyleChecks(), StyleEventCollector()
+            .apply(CheckstyleConfigs.minimalCheckstyleIgnore()))
             .analyze()!!
 
     override fun analyzeCpd() = CpdAnalyzer(config, 25, CpdMatchCollector()).analyze()!!
 
     override fun analyzePmd() = PmdAnalyzer(config, PmdViolationCollector()
-            .apply(PredefConfig.minimalPmdIgnore()))
-            .withRulesets(*PredefConfig.defaultPmdRulesets())
+            .apply(PmdConfigs.minimalPmdIgnore()))
+            .withRulesets(*PmdConfigs.defaultPmdRulesets())
             .analyze()!!
 
     override fun analyzeFindBugs() = FindBugsAnalyzer(config, BugCollector()
-            .apply(PredefConfig.minimalFindBugsIgnore())
+            .apply(FindBugsConfigs.minimalFindBugsIgnore())
             .because("Maybe rethink this", In.clazz(ScaleChromatic.javaClass).ignore("NM_METHOD_NAMING_CONVENTION"))
             .because("Kotlin generated code",
                     In.clazz(D3.javaClass)
